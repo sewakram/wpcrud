@@ -1,0 +1,21 @@
+<?php
+    //------insert.php------
+     $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "test";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password,$dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+
+
+          $store=$_POST['store'];
+            $time=$_POST['time'];
+             $sql= mysqli_query($conn,"INSERT INTO click_history(store,time) VALUES('".$store."','".$time."')");
+
+ ?>
