@@ -52,5 +52,6 @@ $.ajax({
 	https://codehandbook.org/call-web-service-from-jquery-ajax/
 	https://wordpress.stackexchange.com/questions/118772/execute-one-ajax-request-after-another-ajax-request-finished
 	https://codereview.stackexchange.com/questions/79855/alternate-for-nested-ajax-requests
+	https://stackoverflow.com/questions/20769364/insert-data-through-ajax-into-mysql-database
 </body>
 </html>
