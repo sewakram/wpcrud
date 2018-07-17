@@ -48,5 +48,9 @@ $.ajax({
     });
 });
 </script>
+	https://stackoverflow.com/questions/7112672/jquery-ajax-call-to-rest-service
+	https://codehandbook.org/call-web-service-from-jquery-ajax/
+	https://wordpress.stackexchange.com/questions/118772/execute-one-ajax-request-after-another-ajax-request-finished
+	https://codereview.stackexchange.com/questions/79855/alternate-for-nested-ajax-requests
 </body>
 </html>
