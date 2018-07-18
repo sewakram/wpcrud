@@ -33,52 +33,33 @@ $.ajax({
         context: document.body,
         success: function(responses){
             var result=responses.response.data;
-            var datasubmit = [];
-            var dataclk = {};
-            var elementstore;
-            var elementdate;
-        	// // console.log(result.data[i++].Offer['name']);
-         //    result.data.forEach(function(element) {
-         //        ele1+=element.Offer['name'];
-         //        ele2+=element.Stat['date'];
-            
-         //    });
-         //    
-         // result.data.forEach(function(element) {
-            // for(var i=0;i<result.data.current;i++)
-            // {
-            //     element=result.data[i];
-            // // dataclk.store=element.Offer.name;
-            // // dataclk.time=element.Stat.date;
-            //  // datasubmit.push(element);
-            // console.log(element);
-            // }
-         // });
+                	
          
          $.each(result.data, function(index, item) {
             //now you can access properties using dot notation
-            elementstore=item.Offer.nam;
-            elementdate=item.Stat.date;
+           
             console.log(item.Offer.name+'<br>');
             console.log(item.Stat.date);
-        });
-         // datasubmit.push(dataclk);
-         
-           $.ajax({  
-                type: "POST",                               
-                url: "update.php",
-                 //data: datasubmit, 
-                                
-                data: "store=" + elementstore+ "&time=" + elementdate, 
+            /////////////
+            $.ajax({  
+            type: "POST",                               
+            url: "update.php",
+            //data: datasubmit, 
 
-                
-                success: function(data) {  
-                	console.log('update'+data);      
-                    // var newStatus = $('<div>').html(status_upd);   
-                    //  $('.new-status').after(newStatus).fadeIn('slow');  
-                    return false;  
-                    }
-                }); 
+            data: "store="+item.Offer.name+"&time="+ item.Stat.date, 
+
+
+            success: function(data) {  
+            // console.log('update'+data);      
+             
+            return false;  
+            }
+            });
+            ////////////
+        });
+         
+         
+            
          }
     });
 });
