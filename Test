@@ -1,1 +1,19 @@
 
+//To create routines as function
+DROP FUNCTION `testprocedure`;
+CREATE DEFINER=`root`@`localhost` FUNCTION `testprocedure`(`a` INT(10), `b` INT(10)) RETURNS INT(20) COMMENT 'ghfhfg' DETERMINISTIC NO SQL SQL SECURITY DEFINER RETURN a+b
+
+//Display routines as function
+SELECT testprocedure(10,40)
+
+//Create routines as procedure
+DROP PROCEDURE `myprocedure`; CREATE DEFINER=`root`@`localhost` PROCEDURE `myprocedure`(IN `a` INT(10)) COMMENT 'test procedure' NOT DETERMINISTIC NO SQL SQL SECURITY DEFINER SELECT reason-a FROM product
+
+//Display routines as procedure
+SET @p0='1'; CALL `myprocedure`(@p0);
+
+//Create trigger
+DROP TRIGGER IF EXISTS `hello`;CREATE DEFINER=`root`@`localhost` TRIGGER `hello` AFTER INSERT ON `product` FOR EACH ROW INSERT INTO `table 1` (`id`, `Products Name`, `URL`, `COL 3`) VALUES (NULL, 't', 'rrr', 'eee')
+
+//Create event shedulling
+CREATE DEFINER=`root`@`localhost` EVENT `testevent` ON SCHEDULE EVERY 1 MINUTE STARTS '2019-09-17 12:31:03.062078' ENDS '2019-09-17 12:40:01.070016' ON COMPLETION PRESERVE ENABLE COMMENT 'hollaa' DO SELECT testprocedure(10,40)
